@@ -1,0 +1,3 @@
+npm install --save faunadb
+
+run node file_name // to run node file
