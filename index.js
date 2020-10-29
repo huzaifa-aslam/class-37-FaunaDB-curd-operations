@@ -74,11 +74,39 @@ var faunadb = require('faunadb'),
 
        // ************ retrive data by value
 
-   const result=await adminClient.query(
-    q.Get(
-      q.Match(q.Index('detaiil_by_title'), 'hello world')
+  //  const result=await adminClient.query(
+  //   q.Get(
+  //     q.Match(q.Index('detaiil_by_title'), 'hello world')
+  //   )
+  // )
+
+ // ************ update value
+
+  // const result=await adminClient.query(
+  //   q.Update(
+  //     q.Ref(q.Collection('messages'), '280745515031724545'),
+  //     { data: {detail: 'hello pakistan'} },
+  //   )
+  // )
+
+
+   // ************ replace value
+
+  //  const result=await adminClient.query(
+  //   q.Replace(
+  //     q.Ref(q.Collection('messages'), '280745515031724545'),
+  //     { data: { title: 'My dog and other marvels' } },
+  //   )
+  // )
+
+
+     // ************ delete value
+
+     const result=await adminClient.query(
+      q.Delete(
+        q.Ref(q.Collection('messages'), '280745515031724545')
+      )
     )
-  )
 
     console.log(result)
   } catch (err) {
